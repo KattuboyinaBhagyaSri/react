@@ -19,3 +19,18 @@
 - HTTPS
 - Tree Shaking Algorithm - removes unused code
 - Different Dev and Production bundles
+
+
+#FOOD APP PLANNING
+/* Header
+     -Logo
+     -Nav-items
+ *Body
+   -Search
+   -Restuarant Container
+       -Res Cards(img)
+       -Name,stars,Delivery time,Cuisines
+ *Footer
+    -Copyright
+    -Links
+ */
