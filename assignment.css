@@ -1,0 +1,24 @@
+.header{
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ padding: 10px 20px;
+ background-color: #f8f9fa;
+ box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.logo img{
+    height: 40px;
+}
+.search-bar input{
+    width: 300px;
+   padding: 8px;
+   border: 1px solid #ccc;
+   border-radius:20px ;
+   outline: none;
+   font-size: 16px;
+}
+.user-icon img{
+    height: 40px;
+    border-radius: 50%;
+}
