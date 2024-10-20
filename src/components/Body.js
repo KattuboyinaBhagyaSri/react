@@ -1,11 +1,32 @@
 import RestaurentContainer from "./RestaurentContainer";
 import resList from "../../utilities/mockData";
+import { useState } from "react";
+
+
 const Body = () => {
+//Local state Varaible - super powerful variable
+  const [listOfRestaurants,setListOfRetuarants] = useState(resList)
+
+//JavaScript Variable
+// const restaurantsList = [{
+
+// }]
     return (
       <div className="body">
-        <div className="search">Search</div>
+        <div className="filter">
+          <button className="filter-btn"
+          onClick={()=>{
+            filteredRestaurants = listOfRestaurants.filter(
+              res => res.info.avgRating > 4
+            )
+            setListOfRetuarants(filteredRestaurants)
+            
+          }}
+          >  
+            The Rated Resturants</button>
+        </div>
         <div className="res-container">
-          {resList.map((restaurant) => (
+          {listOfRestaurants.map((restaurant) => (
             <RestaurentContainer resData={restaurant} key={restaurant.info.id}/>
           ))}
           {/* <RestaurentContainer resData = {resList[2]}/> */}

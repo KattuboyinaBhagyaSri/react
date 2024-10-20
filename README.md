@@ -34,3 +34,10 @@
     -Copyright
     -Links
  */
+
+ # REACT HOOKS
+ Hook is a normal javascript utility function
+Hooks:
+useState-Gives you powerful state variables
+useEffect-
+
