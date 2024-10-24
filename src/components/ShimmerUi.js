@@ -1,4 +1,6 @@
 const ShimmerUi = () => {
+  console.log("called");
+  
   return (
     <div className="shimmer-container">
       <div className="shimmer-card"></div>

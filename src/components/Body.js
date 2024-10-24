@@ -2,6 +2,7 @@ import RestaurentContainer from "./RestaurentContainer";
 import resList from "../../utilities/mockData";
 import { useState, useEffect } from "react";
 import ShimmerUi from "./ShimmerUi";
+import { Link } from "react-router-dom";
 
 const Body = () => {
   //Local state Varaible - super powerful variable
@@ -30,7 +31,7 @@ const Body = () => {
     );
     //Bypass cors issue by using https://corsproxy.io/? before your api url
     const json = await data.json();
-    // console.log(json);
+    console.log(json);
     // console.log( json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     //Optional Chaining
     setListOfRetuarants(
@@ -83,7 +84,7 @@ const Body = () => {
       </div>
       <div className="res-container">
         {filterSearchRestaurants.map((restaurant) => (
-          <RestaurentContainer resData={restaurant} key={restaurant.info.id} />
+         <Link to={"/restaurant/" + restaurant.info.id}  key={restaurant.info.id}> <RestaurentContainer resData={restaurant} /></Link>
         ))}
         {/* <RestaurentContainer resData = {resList[2]}/> */}
         {/* <RestaurentContainer resData = {resObj.restaurants[1]}/> */}

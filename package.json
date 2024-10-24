@@ -2,10 +2,9 @@
   "name": "react",
   "version": "1.0.0",
   "description": "Namaste React",
-
   "scripts": {
-    "start":"parcel index.html",           
-    "build":"parcel build index.html",
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
     "test": "jest"
   },
   "repository": {
@@ -29,12 +28,10 @@
   },
   "dependencies": {
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.27.0"
   },
-  "bowsersList":[
-"last 2 versions"
+  "bowsersList": [
+    "last 2 versions"
   ]
 }
-
-
-
