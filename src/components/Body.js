@@ -3,19 +3,26 @@ import resList from "../../utilities/mockData";
 import { useState, useEffect } from "react";
 import ShimmerUi from "./ShimmerUi";
 import { Link } from "react-router-dom";
+import useOnlinestatus from "../../utilities/useOnlineStatus";
+
 
 const Body = () => {
-  //Local state Varaible - super powerful variable
-  //useState()
-  // console.log("Body rendered");
+  // Local state Varaible - super powerful variable
+  // useState()
+  console.log("Body rendered");
   
   const [listOfRestaurants, setListOfRetuarants] = useState([]);
-  const [filterSearchRestaurants,setFilterSearchRestaurants] = useState([])
-  // console.log(listOfRestaurants,"listOfRestaurants");
-  // console.log(filterSearchRestaurants,"filterSearchRestaurants");
+  const [filterSearchRestaurants,setFilterSearchRestaurants] = useState()
+  
   
   
   const [searchText, setSearchText] = useState("");
+
+
+const onlineStatus = useOnlinestatus();
+
+
+  
   //JavaScript Variable
   // const restaurantsList = [{
 
@@ -31,7 +38,7 @@ const Body = () => {
     );
     //Bypass cors issue by using https://corsproxy.io/? before your api url
     const json = await data.json();
-    console.log(json);
+    // console.log(json);
     // console.log( json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     //Optional Chaining
     setListOfRetuarants(
@@ -46,6 +53,9 @@ const Body = () => {
   //   return <ShimmerUi />
   // }
   //Conditionl Rendering using Terenary coperator 
+  if(onlineStatus === false) {
+    return <h1>Looks like you're Offline. Check Your Connection!!</h1>
+  } 
   return listOfRestaurants.length === 0 ? (<ShimmerUi />) : (
     <div className="body">
       <div className="filter">
