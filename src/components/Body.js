@@ -5,24 +5,20 @@ import ShimmerUi from "./ShimmerUi";
 import { Link } from "react-router-dom";
 import useOnlinestatus from "../../utilities/useOnlineStatus";
 
-
 const Body = () => {
   // Local state Varaible - super powerful variable
   // useState()
   console.log("Body rendered");
-  
+
   const [listOfRestaurants, setListOfRetuarants] = useState([]);
-  const [filterSearchRestaurants,setFilterSearchRestaurants] = useState()
-  
-  
-  
+  const [filterSearchRestaurants, setFilterSearchRestaurants] = useState();
+
+  // console.log(listOfRestaurants);
+
   const [searchText, setSearchText] = useState("");
 
+  const onlineStatus = useOnlinestatus();
 
-const onlineStatus = useOnlinestatus();
-
-
-  
   //JavaScript Variable
   // const restaurantsList = [{
 
@@ -52,15 +48,18 @@ const onlineStatus = useOnlinestatus();
   // if(listOfRestaurants.length === 0){
   //   return <ShimmerUi />
   // }
-  //Conditionl Rendering using Terenary coperator 
-  if(onlineStatus === false) {
-    return <h1>Looks like you're Offline. Check Your Connection!!</h1>
-  } 
-  return listOfRestaurants.length === 0 ? (<ShimmerUi />) : (
+  //Conditionl Rendering using Terenary coperator
+  if (onlineStatus === false) {
+    return <h1>Looks like you're Offline. Check Your Connection!!</h1>;
+  }
+  return listOfRestaurants.length === 0 ? (
+    <ShimmerUi />
+  ) : (
     <div className="body">
-      <div className="filter">
-        <div className="search">
+      <div className="flex p-2 m-2 items-center">
+        <div>
           <input
+            className="border border-solid border-black rounded-md"
             type="text"
             value={searchText}
             onChange={(e) => {
@@ -70,18 +69,18 @@ const onlineStatus = useOnlinestatus();
         </div>
         <button
           type="button"
-          className="search-btn"
+          className="bg-orange-400 rounded-md px-4 py-2 m-4 text-white"
           onClick={() => {
-             filterSearchRes = listOfRestaurants.filter((res) => 
+            filterSearchRes = listOfRestaurants.filter((res) =>
               res.info.name.toLowerCase().includes(searchText.toLowerCase())
             );
-            setFilterSearchRestaurants(filterSearchRes)
+            setFilterSearchRestaurants(filterSearchRes);
           }}
         >
           Search
         </button>
         <button
-          className="filter-btn"
+          className="bg-orange-400 rounded-md px-4 py-2 m-4 text-white"
           onClick={() => {
             filterRes = listOfRestaurants.filter(
               (res) => res.info.avgRating > 4
@@ -89,12 +88,18 @@ const onlineStatus = useOnlinestatus();
             setFilterSearchRestaurants(filterRes);
           }}
         >
-          The Rated Resturants
+          Top Rated Resturants
         </button>
       </div>
-      <div className="res-container">
+      <div className="flex flex-wrap">
         {filterSearchRestaurants.map((restaurant) => (
-         <Link to={"/restaurant/" + restaurant.info.id}  key={restaurant.info.id}> <RestaurentContainer resData={restaurant} /></Link>
+          <Link
+            to={"/restaurant/" + restaurant.info.id}
+            key={restaurant.info.id}
+          >
+            {" "}
+            <RestaurentContainer resData={restaurant} />
+          </Link>
         ))}
         {/* <RestaurentContainer resData = {resList[2]}/> */}
         {/* <RestaurentContainer resData = {resObj.restaurants[1]}/> */}

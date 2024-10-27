@@ -2,7 +2,15 @@ import React from "react";
 import UserClassChild from "./UserClassChild";
 class UserClass extends React.Component {
   constructor(props) {
+    console.log(props,"props before super() in constructor");
+    // console.log(this.props,"this.props before super() in constructor");
+    
+    
     super(props);
+    console.log(props,"props after super() in constructor");
+    console.log(this.props,"this.props after super() in constructor");
+    
+    
     this.state = {
       userInfo:{
         name:"DummyName",
@@ -13,7 +21,7 @@ class UserClass extends React.Component {
   }
   //Used to make API calls
  async componentDidMount(){
-console.log(this.props.name + "Chld Component DidMount Called");
+// console.log(this.props.name + "Chld Component DidMount Called");
 //Api call
 const data = await fetch("https://api.github.com/users/KattuboyinaBhagyaSri")
 const json = await data.json()
@@ -23,14 +31,17 @@ this.setState({
 })
   }
   componentDidUpdate(){
-    console.log("componentDid Update");
+    // console.log("componentDid Update");
     
   }
   componentWillUnmount(){
-    console.log("component will unmount");
+    // console.log("component will unmount");
     
   }
   render() {
+    // console.log(props,"props  render");
+    console.log(this.props,"this.props  render");
+    
     console.log(this.props.name + "child rendered");
     const { login, type ,avatar_url} = this.state.userInfo
     return (
