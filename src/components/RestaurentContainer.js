@@ -4,7 +4,7 @@ const RestaurentContainer = (resData) => {
       resData?.resData?.info;
     // console.log(resData.resData.info);
     return (
-      <div className="w-56 h-96 m-2 p-4 bg-orange-400 hover:bg-orange-500 rounded-md">
+      <div className="w-56 h-96 m-2 p-4 bg-blue-200 hover:bg-blue-300 rounded-md">
         <img
           className="w-[200] h-36 rounded-lg"
           src={CDN_URL + cloudinaryImageId}
@@ -18,5 +18,15 @@ const RestaurentContainer = (resData) => {
     );
   };
 
+export const withOffer = (RestaurentContainer) =>{
+return (props) =>{
+  return (
+    <div>
+      <label className="absolute bg-black text-white rounded-lg  p-2">Offer</label>
+      <RestaurentContainer {...props}/>
+    </div>
+  )
+}
+}
   export default RestaurentContainer
   

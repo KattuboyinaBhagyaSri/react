@@ -1,4 +1,4 @@
-import RestaurentContainer from "./RestaurentContainer";
+import RestaurentContainer, { withOffer } from "./RestaurentContainer";
 import resList from "../../utilities/mockData";
 import { useState, useEffect } from "react";
 import ShimmerUi from "./ShimmerUi";
@@ -13,7 +13,11 @@ const Body = () => {
   const [listOfRestaurants, setListOfRetuarants] = useState([]);
   const [filterSearchRestaurants, setFilterSearchRestaurants] = useState();
 
-  // console.log(listOfRestaurants);
+  const RestaurentContainerOffer = withOffer(RestaurentContainer);
+
+  // console.log(RestaurentContainerOffer);
+  
+  console.log(listOfRestaurants);
 
   const [searchText, setSearchText] = useState("");
 
@@ -69,7 +73,7 @@ const Body = () => {
         </div>
         <button
           type="button"
-          className="bg-orange-400 rounded-md px-4 py-2 m-4 text-white"
+          className="bg-blue-200 rounded-md px-4 py-2 m-4 text-white"
           onClick={() => {
             filterSearchRes = listOfRestaurants.filter((res) =>
               res.info.name.toLowerCase().includes(searchText.toLowerCase())
@@ -80,7 +84,7 @@ const Body = () => {
           Search
         </button>
         <button
-          className="bg-orange-400 rounded-md px-4 py-2 m-4 text-white"
+          className="bg-blue-200 rounded-md px-4 py-2 m-4 text-white"
           onClick={() => {
             filterRes = listOfRestaurants.filter(
               (res) => res.info.avgRating > 4
@@ -97,8 +101,11 @@ const Body = () => {
             to={"/restaurant/" + restaurant.info.id}
             key={restaurant.info.id}
           >
-            {" "}
-            <RestaurentContainer resData={restaurant} />
+            {restaurant?.info?.aggregatedDiscountInfoV3?.header ? (
+              <RestaurentContainerOffer resData={restaurant}/>
+            ) : (
+              <RestaurentContainer resData={restaurant} />
+            )}
           </Link>
         ))}
         {/* <RestaurentContainer resData = {resList[2]}/> */}

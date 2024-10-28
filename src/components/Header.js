@@ -16,7 +16,7 @@ const Header = () => {
     console.log("useEffect Called");
   }, []);
   return (
-    <div className="flex justify-between bg-orange-400">
+    <div className="flex justify-between bg-blue-200">
       <div className="-container">
         <img className="w-40" src={LOGO_URL} />
       </div>
@@ -39,7 +39,7 @@ const Header = () => {
           </li>
           <li className="p-4 m-4 text-lg text-white">Cart</li>
           <button
-            className="bg-gray-400 px-4 m-6 text-lg text-white rounded-md"
+            className="bg-pink-300 px-4 m-6 text-lg text-white rounded-md"
             onClick={() => {
               // console.log("button Clicked");
               btnNameReact === "Login"
