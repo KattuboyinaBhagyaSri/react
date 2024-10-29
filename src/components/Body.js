@@ -1,10 +1,10 @@
 import RestaurentContainer, { withOffer } from "./RestaurentContainer";
 import resList from "../../utilities/mockData";
-import { useState, useEffect } from "react";
+import { useState, useEffect ,useContext} from "react";
 import ShimmerUi from "./ShimmerUi";
 import { Link } from "react-router-dom";
 import useOnlinestatus from "../../utilities/useOnlineStatus";
-
+import UserContext from "../../utilities/UserContext";
 const Body = () => {
   // Local state Varaible - super powerful variable
   // useState()
@@ -22,7 +22,7 @@ const Body = () => {
   const [searchText, setSearchText] = useState("");
 
   const onlineStatus = useOnlinestatus();
-
+const {loggedInuser,setUserName} = useContext(UserContext)
   //JavaScript Variable
   // const restaurantsList = [{
 
@@ -94,6 +94,13 @@ const Body = () => {
         >
           Top Rated Resturants
         </button>
+        <div>
+          <label>User : </label>
+          <input
+            className="border border-solid border-black rounded-md"
+            type="text"  value={loggedInuser} onChange={(e)=>setUserName(e.target.value)}
+          />
+        </div>
       </div>
       <div className="flex flex-wrap">
         {filterSearchRestaurants.map((restaurant) => (

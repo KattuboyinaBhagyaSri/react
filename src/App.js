@@ -7,6 +7,8 @@ import Contact from "./components/ContactUs";
 import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
 import { createBrowserRouter,RouterProvider,Outlet } from "react-router-dom";
+import { useState,useEffect } from "react";
+import UserContext from "../utilities/UserContext";
 
 /*
 Chunking
@@ -19,12 +21,22 @@ On demand Loading
 const Grocery = lazy(()=> import("./components/Grocery"))
 const About = lazy(() => import("./components/AboutUs"))
 const AppLayout = () => {
-
+  const [userName,setUserName] = useState();
+  //Authentication
+useEffect(()=>{
+  //make an api call to get userName and apssword
+  const data = {
+    name : "Bhagya Sri" 
+  }
+  setUserName(data.name)
+},[])
   return (
+    <UserContext.Provider value={{loggedInuser: userName,setUserName}}>
     <div className="app">
       <Header />
       <Outlet />
     </div>
+    </UserContext.Provider>
   );
 };
 const appRouter = createBrowserRouter([
