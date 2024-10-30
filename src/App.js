@@ -9,6 +9,9 @@ import RestaurantMenu from "./components/RestaurantMenu";
 import { createBrowserRouter,RouterProvider,Outlet } from "react-router-dom";
 import { useState,useEffect } from "react";
 import UserContext from "../utilities/UserContext";
+import { Provider } from "react-redux";
+import appStore from "./Redux/appStore";
+import Cart from "./components/Cart";
 
 /*
 Chunking
@@ -31,12 +34,14 @@ useEffect(()=>{
   setUserName(data.name)
 },[])
   return (
+    <Provider store={appStore}>
     <UserContext.Provider value={{loggedInuser: userName,setUserName}}>
     <div className="app">
       <Header />
       <Outlet />
     </div>
     </UserContext.Provider>
+    </Provider>
   );
 };
 const appRouter = createBrowserRouter([
@@ -47,7 +52,9 @@ const appRouter = createBrowserRouter([
       {path:'/about',element:<Suspense fallback={<h1>Loading....</h1>}><About /></Suspense>},
       {path:'/contact',element:<Contact />},
       {path:'/grocery',element:<Suspense fallback={<h1>Loading....</h1>}><Grocery /></Suspense>},
-      {path:'/restaurant/:resId',element:<RestaurantMenu/>}
+      {path:'/restaurant/:resId',element:<RestaurantMenu/>},
+      {path:'/cart',element:<Cart />},
+
     ],
     errorElement:<Error />},
  

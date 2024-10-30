@@ -41,3 +41,12 @@ Hooks:
 useState-Gives you powerful state variables
 useEffect-
 
+
+# Redux Toolkit
+ - Install @reduxjs/toolkit and react-redux
+ - Build our store
+ - Connect our store to app
+ - Slice(cart slice)
+ - dispatch(action)
+ - selector
+
