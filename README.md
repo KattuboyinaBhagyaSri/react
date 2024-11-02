@@ -50,3 +50,17 @@ useEffect-
  - dispatch(action)
  - selector
 
+ # Types of Testing(developer)
+  - Unit Testing
+  - Integration Testing
+  - End to End Testing (e2e testing)
+
+  # Setting up Testing in our app
+   - Install React Testing Library
+   - Install jest
+   - Install babel dependencies
+   - Configure Babel
+   - Configure parcel config file to disable default babel transpilation
+   - Jest Cofiguration - npx jest --init
+   - Install jsdom library
+
