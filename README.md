@@ -63,4 +63,7 @@ useEffect-
    - Configure parcel config file to disable default babel transpilation
    - Jest Cofiguration - npx jest --init
    - Install jsdom library
+   - Install @babel/preset-react - to make jsx work in test cases
+   - Include @babel/preset-react inside babel.conig
+   - npm install -D @testing-library/jest-dom
 

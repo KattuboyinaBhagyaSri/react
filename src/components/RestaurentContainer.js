@@ -1,9 +1,10 @@
 import { useContext } from "react";
 import {CDN_URL} from "../../utilities/constants"
-const RestaurentContainer = (resData) => {
+const RestaurentContainer = (props) => {
+  const {resData} = props
     const { cloudinaryImageId, name, cuisines, avgRating, costForTwo } =
-      resData?.resData?.info;
-    // console.log(resData.resData.info);
+      resData?.info;
+    // console.log(resData.info);
     return (
       <div className="w-56 h-96 m-2 p-4 bg-blue-200 hover:bg-blue-300 rounded-md">
         <img

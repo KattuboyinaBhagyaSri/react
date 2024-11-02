@@ -1,0 +1,77 @@
+{
+    "info": {
+        "id": "758952",
+        "name": "Pawan Garden Restaurant",
+        "cloudinaryImageId": "e554c893e09e1bb60f6c52e8373e0e08",
+        "locality": "Vijaya Bharathi Street",
+        "areaName": "Subbaraopet",
+        "costForTwo": "₹400 for two",
+        "cuisines": [
+            "Biryani",
+            "North Indian",
+            "South Indian"
+        ],
+        "avgRating": 4.4,
+        "parentId": "448553",
+        "avgRatingString": "4.4",
+        "totalRatingsString": "197",
+        "sla": {
+            "deliveryTime": 25,
+            "lastMileTravel": 1.7,
+            "serviceability": "SERVICEABLE",
+            "slaString": "25-30 mins",
+            "lastMileTravelString": "1.7 km",
+            "iconType": "ICON_TYPE_EMPTY"
+        },
+        "availability": {
+            "nextCloseTime": "2024-11-02 22:45:00",
+            "opened": true
+        },
+        "badges": {},
+        "isOpen": true,
+        "type": "F",
+        "badgesV2": {
+            "entityBadges": {
+                "imageBased": {},
+                "textBased": {},
+                "textExtendedBadges": {}
+            }
+        },
+        "aggregatedDiscountInfoV3": {
+            "header": "20% OFF",
+            "subHeader": "UPTO ₹50"
+        },
+        "orderabilityCommunication": {
+            "title": {},
+            "subTitle": {},
+            "message": {},
+            "customIcon": {}
+        },
+        "differentiatedUi": {
+            "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+            "differentiatedUiMediaDetails": {
+                "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+                "lottie": {},
+                "video": {}
+            }
+        },
+        "reviewsSummary": {},
+        "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+        "restaurantOfferPresentationInfo": {},
+        "externalRatings": {
+            "aggregatedRating": {
+                "rating": "--"
+            }
+        },
+        "ratingsDisplayPreference": "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY"
+    },
+    "analytics": {
+        "context": "seo-data-842747b7-f10d-40c9-bb95-efdfb4964e0b"
+    },
+    "cta": {
+        "link": "https://www.swiggy.com/city/tadepalligudem/pawan-garden-restaurant-vijaya-bharathi-street-subbaraopet-rest758952",
+        "text": "RESTAURANT_MENU",
+        "type": "WEBLINK"
+    },
+    "widgetId": "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo"
+}

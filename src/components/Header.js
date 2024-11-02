@@ -14,13 +14,13 @@ const Header = () => {
   const { loggedInuser } = useContext(UserContext);
 
   const cartItems = useSelector((store) => store.cart.items);
-  console.log(cartItems);
+  // console.log(cartItems);
 
   //If there is no dependency array,useEffect is called on every render
   //If there is dependency array,useEffect is called on initial render(just once),
   //If there is depency array with value([btnNameReact]),useEffect is called everytime the dependency([btnNameReact]) updated
   useEffect(() => {
-    console.log("useEffect Called");
+    // console.log("useEffect Called");
   }, []);
   return (
     <div className="flex justify-between bg-blue-200">
@@ -45,7 +45,7 @@ const Header = () => {
             <Link to="/grocery">Grocery</Link>
           </li>
           <li className="p-4 m-4 text-2xl text-white font-bold">
-            <Link to="/cart">Cart:({cartItems.length})items</Link>
+            <Link to="/cart">Cart - ({cartItems.length} items)</Link>
           </li>
           <button
             className="bg-pink-600 px-4 m-6 text-lg text-white rounded-md"
